@@ -25,5 +25,18 @@
       "error",
       { "ignoreDeclarationSort": true, "ignoreCase": true }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/tests/**/*.ts", "*.spec.ts"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
+    }
+  ]
 }

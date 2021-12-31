@@ -12,3 +12,14 @@ This plugin is best used in conjunction with the typescript-operations plugin wi
 mutations or queries.
 
 All scalar types are always emitted.
+
+## Example
+
+```yml
+generates:
+  path/to/file.ts:
+    plugins:
+      - typescript-operation-types
+    config:
+      omitObjectTypes: true
+```
