@@ -7,7 +7,13 @@
   "module": "dist/module/index.js",
   "repository": "https://github.com/Stonepaw/graphql-codegen-typescript-operation-types",
   "license": "MIT",
-  "keywords": ["graphql", "codegen", "graphql-codegen", "gql", "typescript"],
+  "keywords": [
+    "graphql",
+    "codegen",
+    "graphql-codegen",
+    "gql",
+    "typescript"
+  ],
   "scripts": {
     "test": "jest --forceExit --no-watchman",
     "lint": "eslint src --ext .ts",
