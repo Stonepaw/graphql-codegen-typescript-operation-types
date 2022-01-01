@@ -22,9 +22,13 @@ jobs:
           node-version: 14
           registry-url: 'https://registry.npmjs.org'
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
+      - run: yarn install
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
+      - run: yarn build
+        if: ${{ steps.release.outputs.release_created }}
+      - run: yarn test
+        if: ${{ steps.release.outputs.release_created }}
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
