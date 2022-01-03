@@ -15,11 +15,34 @@ All scalar types are always emitted.
 
 ## Example
 
+Types only
+
 ```yml
+overwrite: true
+schema: 'path/to/schema.gql'
+
 generates:
   path/to/file.ts:
+    documents: 'path/to/gql/**/*.graphql'
     plugins:
-      - typescript-operation-types
+      - graphql-codegen-typescript-operation-types
     config:
       omitObjectTypes: true
+```
+
+Types and fragments
+
+```yml
+overwrite: true
+schema: 'path/to/schema.gql'
+
+generates:
+  path/to/file.ts:
+    documents: 'path/to/gql/**/*.graphql'
+    config:
+      omitObjectTypes: true
+      preResolveTypes: true
+    plugins:
+      - graphql-codegen-typescript-operation-types
+      - typescript-operations
 ```
