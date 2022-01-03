@@ -1,6 +1,6 @@
 {
   "name": "graphql-codegen-typescript-operation-types",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "GraphQL codegen plugin that generates only the types used in the operations",
   "main": "dist/main/index.js",
   "typings": "dist/main/index.d.ts",
