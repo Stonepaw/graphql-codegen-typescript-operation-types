@@ -8,6 +8,5 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/graphql-codegen-typescript-operation-types" vcs="Git" />
   </component>
 </project>
