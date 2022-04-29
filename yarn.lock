@@ -2666,9 +2666,9 @@ graphql-tag@^2.11.0:
     tslib "^2.1.0"
 
 graphql@^16.0.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.2.0.tgz#de3150e80f1fc009590b92a9d16ab1b46e12b656"
-  integrity sha512-MuQd7XXrdOcmfwuLwC2jNvx0n3rxIuNYOxUtiee5XOmfrWo613ar2U8pE7aHAKh8VwfpifubpD9IP+EdEAEOsA==
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.4.0.tgz#bb10b1b4683045dedcb67000eb4ad134a36c59e6"
+  integrity sha512-tYDNcRvKCcfHREZYje3v33NSrSD/ZpbWWdPtBtUUuXx9NCo/2QDxYzNqCnMvfsrnbwRpEHMovVrPu/ERoLrIRg==
 
 has-bigints@^1.0.1:
   version "1.0.1"
