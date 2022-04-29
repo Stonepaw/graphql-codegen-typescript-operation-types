@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.4](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.1.3...v1.1.4) (2022-04-29)
+
+
+### Bug Fixes
+
+* include variable enums ([#20](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/20)) ([644eda3](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/644eda309e67207a9ad6a7d0206ddaf4e7794465)), closes [#18](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/18)
+
 ### [1.1.3](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.1.2...v1.1.3) (2022-04-27)
 
 
