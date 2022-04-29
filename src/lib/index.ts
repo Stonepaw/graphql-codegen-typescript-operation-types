@@ -183,7 +183,7 @@ function discoverTypes(
        in order to get all the enums and input types that exist in this input type
       */
       const inputType = getNamedType(typeInfo.getInputType());
-      if (inputType && isInputObjectType(inputType)) {
+      if (inputType && (isInputObjectType(inputType) || isEnumType(inputType))) {
         collectTypesFromNode(inputType, discoveredTypes);
       }
     },
