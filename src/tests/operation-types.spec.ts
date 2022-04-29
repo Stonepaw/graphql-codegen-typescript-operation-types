@@ -762,6 +762,114 @@ describe('typescript-operation-types', () => {
     `);
   });
 
+  it('should include the input enum type when it is a variable', async () => {
+    const schema = buildSchema(
+      /* GraphQL */ `
+        type Mutation {
+          updateFoo(input: FooInput!, id: ID!): Foo
+        }
+
+        type Foo {
+          id: ID!
+        }
+
+        enum FooType {
+          FOO_A
+          FOO_B
+          FOO_C
+        }
+
+        enum BarType {
+          BAR_A
+          BAR_B
+          BAR_C
+        }
+
+        input FooInput {
+          fooType: FooType!
+          barInput: [BarInput]
+          count: Int
+        }
+
+        input BarInput {
+          bazInput: BazInput
+          barType: BarType!
+        }
+
+        input BazInput {
+          a: String
+          b: Int
+        }
+      `,
+      { assumeValid: true }
+    );
+
+    const ast = parse(/* GraphQL */ `
+      mutation MyMutation(
+        $id: ID!
+        $foo: FooType!
+        $bar: [BarInput]
+        $count: Int
+      ) {
+        updateFoo(
+          id: $id
+          input: { count: $count, fooType: $foo, barInput: $bar }
+        ) {
+          id
+        }
+      }
+    `);
+
+    const result = await plugin(
+      schema,
+      [
+        {
+          document: ast,
+        },
+      ],
+      {}
+    );
+
+    expect(result.content).toMatchInlineSnapshot(`
+      "/** All built-in and custom scalars, mapped to their actual values */
+      export type Scalars = {
+        ID: string;
+        String: string;
+        Boolean: boolean;
+        Int: number;
+        Float: number;
+      };
+
+      export type Foo = {
+        __typename?: 'Foo';
+        id: Scalars['ID'];
+      };
+
+      export enum FooType {
+        FooA = 'FOO_A',
+        FooB = 'FOO_B',
+        FooC = 'FOO_C'
+      }
+
+      export enum BarType {
+        BarA = 'BAR_A',
+        BarB = 'BAR_B',
+        BarC = 'BAR_C'
+      }
+
+      export type BarInput = {
+        bazInput?: InputMaybe<BazInput>;
+        barType: BarType;
+      };
+
+      export type BazInput = {
+        a?: InputMaybe<Scalars['String']>;
+        b?: InputMaybe<Scalars['Int']>;
+      };
+      "
+    `);
+  });
+
   describe('when omitObjectTypes is true', () => {
     it('should include the fragment enums', async () => {
       const ast = parse(/* GraphQL */ `
