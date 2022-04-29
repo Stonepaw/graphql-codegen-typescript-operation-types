@@ -762,7 +762,7 @@ describe('typescript-operation-types', () => {
     `);
   });
 
-  it.only('should include the input enum type when it is a variable', async () => {
+  it('should include the input enum type when it is a variable', async () => {
     const schema = buildSchema(
       /* GraphQL */ `
         type Mutation {
