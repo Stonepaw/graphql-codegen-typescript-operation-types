@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.1.4...v1.2.0) (2022-12-22)
+
+
+### Features
+
+* bump code generator plugin versions ([#46](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/46)) ([8fa5340](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/8fa53404907a3352528e8ee0f6136781d52fc949))
+
 ### [1.1.4](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.1.3...v1.1.4) (2022-04-29)
 
 
