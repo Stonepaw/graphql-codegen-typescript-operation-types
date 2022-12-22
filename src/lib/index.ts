@@ -42,6 +42,7 @@ export const plugin: PluginFunction<
   const visitor = new SpecificTypesVisitor(schema, config, discoveredTypes);
 
   // This is generally the same as the typescript plugin, just with only the types discovered in the operations
+  // @ts-expect-error The types are incompatible for some reason. This is actually due to the other typescript plugin not being in strict mode as this just inherits that visitor from that plugin.
   const visitorResult = oldVisit(ast, { leave: visitor });
   const scalars = visitor.scalarsDefinition;
   const directiveArgumentAndInputFieldMappings =
