@@ -12,3 +12,5 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: 'daily'
+    allow:
+      - dependency-type: "direct"
