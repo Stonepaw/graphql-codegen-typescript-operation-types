@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.2.0...v1.2.1) (2022-12-22)
+
+
+### Miscellaneous
+
+* allow only direct dependabot updates ([c13ba73](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/c13ba7389318ba7c05df1f45146d5c744af8620c))
+
 ## [1.2.0](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.1.4...v1.2.0) (2022-12-22)
 
 
