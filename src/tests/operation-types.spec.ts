@@ -6,11 +6,11 @@ import '@graphql-codegen/testing';
 
 const scalars = `/** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
 };
 `;
 
@@ -151,18 +151,18 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
       "
     `);
@@ -199,23 +199,23 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
 
       export type NestedType = {
         __typename?: 'NestedType';
-        id: Scalars['String'];
+        id: Scalars['String']['output'];
         nested: IncludedType;
       };
       "
@@ -248,11 +248,11 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export enum ModelEnum {
@@ -262,7 +262,7 @@ describe('typescript-operation-types', () => {
 
       export type ObjectWithEnum = {
         __typename?: 'ObjectWithEnum';
-        id: Scalars['ID'];
+        id: Scalars['ID']['output'];
         model?: Maybe<ModelEnum>;
       };
       "
@@ -295,22 +295,22 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type UsedInput = {
-        id: Scalars['ID'];
+        id: Scalars['ID']['input'];
       };
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
       "
     `);
@@ -347,32 +347,32 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type UsedInput = {
-        id: Scalars['ID'];
+        id: Scalars['ID']['input'];
       };
 
       export type NestedInput = {
-        id: Scalars['ID'];
+        id: Scalars['ID']['input'];
         nested?: InputMaybe<UsedInput>;
       };
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
 
       export type NestedType = {
         __typename?: 'NestedType';
-        id: Scalars['String'];
+        id: Scalars['String']['output'];
         nested: IncludedType;
       };
       "
@@ -407,11 +407,11 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export enum IncludedEnum {
@@ -425,9 +425,9 @@ describe('typescript-operation-types', () => {
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
       "
     `);
@@ -461,11 +461,11 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export enum IncludedEnum {
@@ -483,9 +483,9 @@ describe('typescript-operation-types', () => {
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
       "
     `);
@@ -519,23 +519,23 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type TestInterface = {
-        id: Scalars['ID'];
-        isInterface: Scalars['Boolean'];
+        id: Scalars['ID']['output'];
+        isInterface: Scalars['Boolean']['output'];
       };
 
       export type ExtendedType = TestInterface & {
         __typename?: 'ExtendedType';
-        id: Scalars['ID'];
-        isInterface: Scalars['Boolean'];
-        name: Scalars['String'];
+        id: Scalars['ID']['output'];
+        isInterface: Scalars['Boolean']['output'];
+        name: Scalars['String']['output'];
       };
       "
     `);
@@ -565,18 +565,18 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
       "
     `);
@@ -613,11 +613,11 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export enum ModelEnum {
@@ -627,14 +627,14 @@ describe('typescript-operation-types', () => {
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
 
       export type ObjectWithEnum = {
         __typename?: 'ObjectWithEnum';
-        id: Scalars['ID'];
+        id: Scalars['ID']['output'];
         model?: Maybe<ModelEnum>;
       };
       "
@@ -674,11 +674,11 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export enum ModelEnum {
@@ -688,14 +688,14 @@ describe('typescript-operation-types', () => {
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
 
       export type ObjectWithEnum = {
         __typename?: 'ObjectWithEnum';
-        id: Scalars['ID'];
+        id: Scalars['ID']['output'];
         model?: Maybe<ModelEnum>;
       };
 
@@ -739,23 +739,23 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type IncludedType = {
         __typename?: 'IncludedType';
-        id: Scalars['String'];
-        name: Scalars['String'];
-        included: Scalars['Boolean'];
+        id: Scalars['String']['output'];
+        name: Scalars['String']['output'];
+        included: Scalars['Boolean']['output'];
       };
 
       export type NestedTypeWithArgs = {
         __typename?: 'NestedTypeWithArgs';
-        id: Scalars['String'];
+        id: Scalars['String']['output'];
         nested: IncludedType;
       };
       "
@@ -833,16 +833,16 @@ describe('typescript-operation-types', () => {
     expect(result.content).toMatchInlineSnapshot(`
       "/** All built-in and custom scalars, mapped to their actual values */
       export type Scalars = {
-        ID: string;
-        String: string;
-        Boolean: boolean;
-        Int: number;
-        Float: number;
+        ID: { input: string; output: string; }
+        String: { input: string; output: string; }
+        Boolean: { input: boolean; output: boolean; }
+        Int: { input: number; output: number; }
+        Float: { input: number; output: number; }
       };
 
       export type Foo = {
         __typename?: 'Foo';
-        id: Scalars['ID'];
+        id: Scalars['ID']['output'];
       };
 
       export enum FooType {
@@ -863,8 +863,8 @@ describe('typescript-operation-types', () => {
       };
 
       export type BazInput = {
-        a?: InputMaybe<Scalars['String']>;
-        b?: InputMaybe<Scalars['Int']>;
+        a?: InputMaybe<Scalars['String']['input']>;
+        b?: InputMaybe<Scalars['Int']['input']>;
       };
       "
     `);
