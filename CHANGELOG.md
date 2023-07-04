@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.2.0...v2.0.0) (2023-07-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump versions of graphql codegen dependencies and node engine ([#78](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/78))
+
+### Features
+
+* bump versions of graphql codegen dependencies and node engine ([#78](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/78)) ([a397973](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/a397973b740516cefdd3cd97d2c7fdeb583200fa))
+
+
+### Miscellaneous
+
+* allow only direct dependabot updates ([c13ba73](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/c13ba7389318ba7c05df1f45146d5c744af8620c))
+
 ## [1.2.0](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v1.1.4...v1.2.0) (2022-12-22)
 
 
