@@ -27,7 +27,7 @@
     "watch:test": "jest --watch"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "dependencies": {
     "@graphql-codegen/typescript": "^4.0.1",
