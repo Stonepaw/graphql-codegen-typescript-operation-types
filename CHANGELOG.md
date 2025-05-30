@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v2.0.1...v2.0.2) (2025-05-30)
+
+
+### Bug Fixes
+
+* export config type from barrel ([#82](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/82)) ([526981c](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/526981c00077d29fc2ecbd121a8300158f9e4f1e))
+
 ## [2.0.1](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v2.0.0...v2.0.1) (2023-07-04)
 
 
