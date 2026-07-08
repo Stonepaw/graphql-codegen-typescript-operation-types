@@ -3,6 +3,7 @@
 import { plugin } from '../lib';
 import { buildSchema, parse } from 'graphql';
 import '@graphql-codegen/testing';
+import { describe, expect, it } from 'vitest';
 
 const scalars = `/** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -145,7 +146,7 @@ describe('typescript-operation-types', () => {
       ],
       {
         scalars: {},
-      }
+      },
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -193,7 +194,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -242,7 +243,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -289,7 +290,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -341,7 +342,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -401,7 +402,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -455,7 +456,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -513,7 +514,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -559,7 +560,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -607,7 +608,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -668,7 +669,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -733,7 +734,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -801,7 +802,7 @@ describe('typescript-operation-types', () => {
           b: Int
         }
       `,
-      { assumeValid: true }
+      { assumeValid: true },
     );
 
     const ast = parse(/* GraphQL */ `
@@ -827,7 +828,7 @@ describe('typescript-operation-types', () => {
           document: ast,
         },
       ],
-      {}
+      {},
     );
 
     expect(result.content).toMatchInlineSnapshot(`
@@ -894,7 +895,7 @@ describe('typescript-operation-types', () => {
         ],
         {
           omitObjectTypes: true,
-        }
+        },
       );
 
       expect(result.content).toEqual(`${scalars}
@@ -927,7 +928,7 @@ export enum ModelEnum {
         ],
         {
           omitObjectTypes: true,
-        }
+        },
       );
 
       expect(result.content).toEqual(scalars);
@@ -956,7 +957,7 @@ export enum ModelEnum {
         ],
         {
           omitObjectTypes: true,
-        }
+        },
       );
 
       expect(result.content).toEqual(scalars);
@@ -989,7 +990,7 @@ export enum ModelEnum {
         ],
         {
           omitObjectTypes: true,
-        }
+        },
       );
 
       expect(result.content).toEqual(scalars);

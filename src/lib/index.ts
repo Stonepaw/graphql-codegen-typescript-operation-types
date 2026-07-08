@@ -29,20 +29,19 @@ export const plugin: PluginFunction<
 > = (
   schema: GraphQLSchema,
   documents: Types.DocumentFile[],
-  config: TypescriptOperationTypesPluginConfig
+  config: TypescriptOperationTypesPluginConfig,
 ) => {
   const ast = getCachedDocumentNodeFromSchema(schema);
 
   const discoveredTypes = discoverTypes(
     documents,
     schema,
-    config.omitObjectTypes ?? false
+    config.omitObjectTypes ?? false,
   );
 
   const visitor = new SpecificTypesVisitor(schema, config, discoveredTypes);
 
-  // This is generally the same as the typescript plugin, just with only the types discovered in the operations
-  // @ts-expect-error The types are incompatible for some reason. This is actually due to the other typescript plugin not being in strict mode as this just inherits that visitor from that plugin.
+  // This is generally the same as the Typescript plugin, just with only the types discovered in the operations
   const visitorResult = oldVisit(ast, { leave: visitor });
   const scalars = visitor.scalarsDefinition;
   const directiveArgumentAndInputFieldMappings =
@@ -73,7 +72,7 @@ export const plugin: PluginFunction<
  */
 function collectTypesFromNode(
   node: GraphQLNamedType,
-  discoveredTypes: Map<string, boolean>
+  discoveredTypes: Map<string, boolean>,
 ) {
   const name = node.name;
 
@@ -140,7 +139,7 @@ function collectTypesFromNode(
 function discoverTypes(
   documents: Types.DocumentFile[],
   schema: GraphQLSchema,
-  omitModelTypes: boolean
+  omitModelTypes: boolean,
 ): Map<string, boolean> {
   const discoveredTypes = new Map<string, boolean>();
 
@@ -181,10 +180,13 @@ function discoverTypes(
       /*
        Record the input types in the variables, this is the starting point of what input types
        will be included, but we also need to iterate through the fields in the input types
-       in order to get all the enums and input types that exist in this input type
+        to get all the enums and input types that exist in this input type
       */
       const inputType = getNamedType(typeInfo.getInputType());
-      if (inputType && (isInputObjectType(inputType) || isEnumType(inputType))) {
+      if (
+        inputType &&
+        (isInputObjectType(inputType) || isEnumType(inputType))
+      ) {
         collectTypesFromNode(inputType, discoveredTypes);
       }
     },
