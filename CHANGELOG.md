@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v2.0.2...v3.0.0) (2026-07-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Converted the dependencies to peer dependencies. The bumped versions also changed the api for the nodes so a newer version of the codegen packages are required.
+
+### Features
+
+* bumped the graphql-codegen versions and converted them to peer dependencies ([#84](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/issues/84)) ([b8c23f3](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/commit/b8c23f3773db9d812bd5dd929dec62a11ece2f91))
+
 ## [2.0.2](https://github.com/Stonepaw/graphql-codegen-typescript-operation-types/compare/v2.0.1...v2.0.2) (2025-05-30)
 
 
