@@ -5,7 +5,8 @@ on:
 name: release-please
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write  # Required for release-please-action
+  pull-requests: write
 jobs:
   release-please:
     runs-on: ubuntu-latest
