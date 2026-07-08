@@ -13,7 +13,7 @@ export class SpecificTypesVisitor extends TsVisitor {
   constructor(
     schema: GraphQLSchema,
     pluginConfig: TypescriptOperationTypesPluginConfig,
-    private readonly includedTypes: Map<string, boolean>
+    private readonly includedTypes: Map<string, boolean>,
   ) {
     super(schema, pluginConfig);
   }
@@ -28,7 +28,8 @@ export class SpecificTypesVisitor extends TsVisitor {
   }
 
   InputObjectTypeDefinition(node: InputObjectTypeDefinitionNode): string {
-    const name = node.name as unknown as string;
+    const name = node.name.value;
+
     if (this.includedTypes.has(name)) {
       return super.InputObjectTypeDefinition(node);
     }
@@ -38,9 +39,10 @@ export class SpecificTypesVisitor extends TsVisitor {
   ObjectTypeDefinition(
     node: ObjectTypeDefinitionNode,
     key: string | number,
-    parent: unknown
+    parent: unknown,
   ): string {
-    const name = node.name as unknown as string;
+    const name = node.name.value;
+
     if (this.includedTypes.has(name)) {
       return super.ObjectTypeDefinition(node, key, parent);
     }
@@ -48,7 +50,7 @@ export class SpecificTypesVisitor extends TsVisitor {
   }
 
   EnumTypeDefinition(node: EnumTypeDefinitionNode): string {
-    const name = node.name as unknown as string;
+    const name = node.name.value;
 
     if (this.includedTypes.has(name)) {
       return super.EnumTypeDefinition(node);
@@ -59,9 +61,9 @@ export class SpecificTypesVisitor extends TsVisitor {
   InterfaceTypeDefinition(
     node: InterfaceTypeDefinitionNode,
     key: number | string,
-    parent: unknown
+    parent: unknown,
   ): string {
-    const name = node.name as unknown as string;
+    const name = node.name.value;
 
     if (this.includedTypes.has(name)) {
       return super.InterfaceTypeDefinition(node, key, parent);
@@ -72,9 +74,10 @@ export class SpecificTypesVisitor extends TsVisitor {
   UnionTypeDefinition(
     node: UnionTypeDefinitionNode,
     key: number | string,
-    parent: unknown
+    parent: unknown,
   ): string {
-    const name = node.name as unknown as string;
+    const name = node.name.value;
+
     if (this.includedTypes.has(name)) {
       return super.UnionTypeDefinition(node, key, parent);
     }
