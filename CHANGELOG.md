@@ -5,7 +5,11 @@
 
 ### ⚠ BREAKING CHANGES
 
-* Converted the dependencies to peer dependencies. The bumped versions also changed the api for the nodes so a newer version of the codegen packages are required.
+* Converted the graphql-codegen dependencies to peer dependencies and bumped their required major versions.
+  - @graphql-codegen/plugin-helpers ^6 || ^7
+  - @graphql-codegen/typescript ^5 || ^6
+
+Both these plugins are now required to be installed as peer dependencies instead of being bundled with this plugin.
 
 ### Features
 
