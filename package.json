@@ -24,7 +24,7 @@
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
     "watch:build": "tsc -p tsconfig.prod.json -w",
-    "watch:test": "jest --watch"
+    "watch:test": "vitest --watch"
   },
   "engines": {
     "node": ">=16"
